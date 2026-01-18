@@ -8,7 +8,7 @@ const FloatingActionButton = ({ onAddItem, onQuickSearch, className = "" }) => {
   const actions = [
     {
       icon: Upload,
-      label: 'Report Lost Item',
+      label: 'Report Lost things',
       onClick: () => onAddItem?.('lost'),
       color: 'bg-gradient-to-r from-red-400 to-red-500 hover:from-red-500 hover:to-red-600',
       description: 'Lost something? Report it now'
