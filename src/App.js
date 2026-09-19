@@ -2,15 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { LanguageProvider } from './context/LanguageContext';
-import { NotificationProvider } from './components/NotificationSystem';
-import SimpleHeader from './components/SimpleHeader';
-import Home from './pages/SimpleHome';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Dashboard from './pages/SimpleDashboard';
-import About from './pages/SimpleAbout';
-import Contact from './pages/SimpleContact';
-import Profile from './pages/Profile';
+import { NotificationProvider } from './components/features/NotificationSystem';
+import SimpleHeader from './components/layout/SimpleHeader';
+import Home from './pages/app/SimpleHome';
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/Signup';
+import Dashboard from './pages/app/SimpleDashboard';
+import About from './pages/app/SimpleAbout';
+import Contact from './pages/app/SimpleContact';
+import Profile from './pages/app/Profile';
 
 function App() {
   return (
