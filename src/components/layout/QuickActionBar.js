@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Plus, Search, Bell, Filter, MapPin, Zap } from 'lucide-react';
-import { useNotification } from './NotificationSystem';
+import { useNotification } from '../features/NotificationSystem';
 
 const QuickActionBar = ({ onAction, activeFilters = {} }) => {
   const { success, info } = useNotification();

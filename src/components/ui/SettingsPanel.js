@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNotification } from './NotificationSystem';
+import { useNotification } from '../features/NotificationSystem';
 import { 
   Settings, X, Moon, Sun, Bell, Save, Minimize2, 
   Zap, Volume2, Search, HelpCircle, Wifi, Database,

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Plus, Upload, Search, Camera, MessageSquare, X } from 'lucide-react';
-import { useNotification } from './NotificationSystem';
-import PostItemModal from './PostItemModal';
+import { useNotification } from '../features/NotificationSystem';
+import PostItemModal from '../features/PostItemModal';
 
 const EnhancedFloatingActionButton = ({ className = "fixed bottom-6 right-6" }) => {
   const [isOpen, setIsOpen] = useState(false);

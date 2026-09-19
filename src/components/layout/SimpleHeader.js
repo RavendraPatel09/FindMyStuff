@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import Logo from './Logo';
-import SettingsPanel from './SettingsPanel';
+import Logo from '../ui/Logo';
+import SettingsPanel from '../ui/SettingsPanel';
 import { User, Bell, Settings } from 'lucide-react';
 
 const SimpleHeader = () => {

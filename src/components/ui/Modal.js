@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, Calendar, MapPin, Tag, User, Phone, Mail, MessageCircle } from 'lucide-react';
-import SocialSharing from './SocialSharing';
+import SocialSharing from '../features/SocialSharing';
 
 // Select a representative image based on item name/category (mirrors ItemCard logic)
 const getImageForItem = (item) => {
