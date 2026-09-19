@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { EyeOff, Eye, Shield, AlertCircle, Check, User, Lock } from 'lucide-react';
-import DuplicateDetectionService from '../services/DuplicateDetection';
+import DuplicateDetectionService from '../../services/DuplicateDetection';
 
 const AnonymousPostingForm = ({ isOpen, onClose, onSubmit }) => {
   const [formData, setFormData] = useState({

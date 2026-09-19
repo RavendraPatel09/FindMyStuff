@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Users, Shield, Zap, Heart, Award } from 'lucide-react';
-import Logo from '../components/ui/Logo';
+import Logo from '../../components/ui/Logo';
 
 const About = () => {
   const features = [

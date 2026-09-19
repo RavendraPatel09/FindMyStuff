@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
-import SearchBar from '../components/ui/SearchBar';
-import EnhancedFloatingActionButton from '../components/layout/EnhancedFloatingActionButton';
+import { useAuth } from '../../context/AuthContext';
+import SearchBar from '../../components/ui/SearchBar';
+import EnhancedFloatingActionButton from '../../components/layout/EnhancedFloatingActionButton';
 import { Search, Filter, Plus } from 'lucide-react';
 
 const SimpleDashboard = () => {

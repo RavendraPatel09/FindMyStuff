@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import SearchBar from '../components/ui/SearchBar';
-import EnhancedFloatingActionButton from '../components/layout/EnhancedFloatingActionButton';
+import { useAuth } from '../../context/AuthContext';
+import SearchBar from '../../components/ui/SearchBar';
+import EnhancedFloatingActionButton from '../../components/layout/EnhancedFloatingActionButton';
 import { Search, Users, Shield, Clock } from 'lucide-react';
 
 const SimpleHome = () => {

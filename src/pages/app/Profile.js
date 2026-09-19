@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { useNotification } from '../components/features/NotificationSystem';
+import { useAuth } from '../../context/AuthContext';
+import { useNotification } from '../../components/features/NotificationSystem';
 import { 
   User, Settings, Heart, Package, MessageSquare, Shield, 
   Bell, Eye, Camera, Edit3, Save, X, Plus, Calendar,

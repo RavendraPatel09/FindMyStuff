@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import Logo from '../components/ui/Logo';
-import SearchBar from '../components/ui/SearchBar';
-import FloatingActionButton from '../components/layout/FloatingActionButton';
-import AccessibilityFeatures from '../components/features/AccessibilityFeatures';
+import { useAuth } from '../../context/AuthContext';
+import Logo from '../../components/ui/Logo';
+import SearchBar from '../../components/ui/SearchBar';
+import FloatingActionButton from '../../components/layout/FloatingActionButton';
+import AccessibilityFeatures from '../../components/features/AccessibilityFeatures';
 import { Search, Users, Shield, Clock, Bell, MapPin, ArrowRight, Package, EyeOff, BookOpen, MessageSquare, Share2, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-import PageTransition from '../components/ui/PageTransition';
+import PageTransition from '../../components/ui/PageTransition';
 import { useInView } from 'react-intersection-observer';
 
 const Home = () => {

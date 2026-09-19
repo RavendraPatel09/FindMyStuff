@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Clock, MapPin, MessageCircle, Send, Twitter, Instagram, Facebook } from 'lucide-react';
-import Logo from '../components/ui/Logo';
+import Logo from '../../components/ui/Logo';
 
 const Contact = () => {
   const [formData, setFormData] = useState({

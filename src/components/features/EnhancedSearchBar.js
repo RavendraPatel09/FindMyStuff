@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, Camera, X, Sparkles, MapPin, Calendar } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../../context/LanguageContext';
 import VoiceSearch from './VoiceSearch';
 import AISearchSuggestions from './AISearchSuggestions';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Upload, Plus, X, Save, AlertTriangle, CheckCircle, Camera, FileText, Package, Trash2 } from 'lucide-react';
-import DuplicateDetectionService from '../services/DuplicateDetection';
+import DuplicateDetectionService from '../../services/DuplicateDetection';
 
 const BatchPosting = ({ isOpen, onClose, onSubmit }) => {
   const [items, setItems] = useState([{

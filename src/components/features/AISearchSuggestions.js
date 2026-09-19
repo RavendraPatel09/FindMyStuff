@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Sparkles, Clock, TrendingUp, MapPin, Tag, User } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../../context/LanguageContext';
 
 const AISearchSuggestions = ({ query, onSuggestionSelect, onSearch, className = '' }) => {
   const { t } = useLanguage();

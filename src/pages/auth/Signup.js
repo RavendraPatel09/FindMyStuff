@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import Logo from '../components/ui/Logo';
+import { useAuth } from '../../context/AuthContext';
+import Logo from '../../components/ui/Logo';
 import { Eye, EyeOff, Mail, Lock, User, GraduationCap } from 'lucide-react';
 
 const Signup = () => {

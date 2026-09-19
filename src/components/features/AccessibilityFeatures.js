@@ -7,7 +7,7 @@ import {
   Zap, ZapOff, Globe, Languages, Shield, Wifi, Database,
   Clock, Smartphone, Monitor, Palette as PaletteIcon
 } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../../context/LanguageContext';
 
 const AccessibilityFeatures = () => {
   const { t, currentLanguage, changeLanguage, availableLanguages } = useLanguage();

@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
-import SearchBar from '../components/ui/SearchBar';
-import ItemCard from '../components/ui/ItemCard';
-import Modal from '../components/ui/Modal';
-import FloatingActionButton from '../components/layout/FloatingActionButton';
-import StaggeredGrid from '../components/ui/StaggeredGrid';
-import ScrollReveal from '../components/ui/ScrollReveal';
-import SmartDashboard from '../components/features/SmartDashboard';
-import QuickActionsPanel from '../components/features/QuickActionsPanel';
-import AIMatchingEngine from '../components/features/AIMatchingEngine';
-import InteractiveCampusMap from '../components/features/InteractiveCampusMap';
-import LoadingSkeleton from '../components/ui/LoadingSkeleton';
-import SmartMatchNotifier from '../components/features/SmartMatchNotifier';
-import QuickActionBar from '../components/layout/QuickActionBar';
+import { useAuth } from '../../context/AuthContext';
+import SearchBar from '../../components/ui/SearchBar';
+import ItemCard from '../../components/ui/ItemCard';
+import Modal from '../../components/ui/Modal';
+import FloatingActionButton from '../../components/layout/FloatingActionButton';
+import StaggeredGrid from '../../components/ui/StaggeredGrid';
+import ScrollReveal from '../../components/ui/ScrollReveal';
+import SmartDashboard from '../../components/features/SmartDashboard';
+import QuickActionsPanel from '../../components/features/QuickActionsPanel';
+import AIMatchingEngine from '../../components/features/AIMatchingEngine';
+import InteractiveCampusMap from '../../components/features/InteractiveCampusMap';
+import LoadingSkeleton from '../../components/ui/LoadingSkeleton';
+import SmartMatchNotifier from '../../components/features/SmartMatchNotifier';
+import QuickActionBar from '../../components/layout/QuickActionBar';
 import { Plus, Filter, Camera, Upload, Search, Grid, BarChart3, Map, Brain } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import MessagingSystem from '../components/features/MessagingSystem';
-import UserReporting from '../components/features/UserReporting';
+import MessagingSystem from '../../components/features/MessagingSystem';
+import UserReporting from '../../components/features/UserReporting';
 
 const Dashboard = () => {
   const { user } = useAuth();
