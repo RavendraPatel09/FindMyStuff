@@ -39,10 +39,6 @@ html, body, #root {
   overflow: hidden;
 }
 
-* {
-  transition: all 0.2s ease;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
 }
