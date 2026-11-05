@@ -1,82 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../context/AuthContext';
+import React, { useMemo, useState } from 'react';
 import SearchBar from '../../components/ui/SearchBar';
 import EnhancedFloatingActionButton from '../../components/layout/EnhancedFloatingActionButton';
-import { Search, Filter, Plus } from 'lucide-react';
+import { Search } from 'lucide-react';
+import { filterItems } from '../../utils/filterItems';
+
+const items = [
+  {
+    id: 1,
+    name: 'iPhone 13 Pro',
+    category: 'Electronics',
+    status: 'lost',
+    location: 'Library',
+    date: '2024-01-15',
+    description: 'Black iPhone 13 Pro with cracked screen protector',
+    image: '/api/placeholder/300/200'
+  },
+  {
+    id: 2,
+    name: 'Blue Backpack',
+    category: 'Bags',
+    status: 'found',
+    location: 'Student Center',
+    date: '2024-01-14',
+    description: 'Navy blue Jansport backpack with laptop inside',
+    image: '/api/placeholder/300/200'
+  },
+  {
+    id: 3,
+    name: 'Car Keys',
+    category: 'Keys',
+    status: 'lost',
+    location: 'Parking Lot B',
+    date: '2024-01-13',
+    description: 'Honda keys with red keychain',
+    image: '/api/placeholder/300/200'
+  },
+  {
+    id: 4,
+    name: 'Textbook - Biology',
+    category: 'Books',
+    status: 'found',
+    location: 'Science Building',
+    date: '2024-01-12',
+    description: 'Campbell Biology textbook, 12th edition',
+    image: '/api/placeholder/300/200'
+  }
+];
 
 const SimpleDashboard = () => {
-  const { user } = useAuth();
-  const [items, setItems] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-
-  // Sample data
-  useEffect(() => {
-    const sampleItems = [
-      {
-        id: 1,
-        name: 'iPhone 13 Pro',
-        category: 'Electronics',
-        status: 'lost',
-        location: 'Library',
-        date: '2024-01-15',
-        description: 'Black iPhone 13 Pro with cracked screen protector',
-        image: '/api/placeholder/300/200'
-      },
-      {
-        id: 2,
-        name: 'Blue Backpack',
-        category: 'Bags',
-        status: 'found',
-        location: 'Student Center',
-        date: '2024-01-14',
-        description: 'Navy blue Jansport backpack with laptop inside',
-        image: '/api/placeholder/300/200'
-      },
-      {
-        id: 3,
-        name: 'Car Keys',
-        category: 'Keys',
-        status: 'lost',
-        location: 'Parking Lot B',
-        date: '2024-01-13',
-        description: 'Honda keys with red keychain',
-        image: '/api/placeholder/300/200'
-      },
-      {
-        id: 4,
-        name: 'Textbook - Biology',
-        category: 'Books',
-        status: 'found',
-        location: 'Science Building',
-        date: '2024-01-12',
-        description: 'Campbell Biology textbook, 12th edition',
-        image: '/api/placeholder/300/200'
-      }
-    ];
-    setItems(sampleItems);
-    setFilteredItems(sampleItems);
-  }, []);
-
-  // Filter items
-  useEffect(() => {
-    let filtered = items;
-    
-    if (activeFilter !== 'all') {
-      filtered = filtered.filter(item => item.status === activeFilter);
-    }
-    
-    if (searchQuery) {
-      filtered = filtered.filter(item =>
-        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.location.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
-    
-    setFilteredItems(filtered);
-  }, [items, activeFilter, searchQuery]);
+  const filteredItems = useMemo(
+    () => filterItems(items, activeFilter, searchQuery),
+    [activeFilter, searchQuery]
+  );
 
   const handleSearch = (query) => {
     setSearchQuery(query);
