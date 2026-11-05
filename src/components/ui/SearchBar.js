@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Search, Filter, X, Clock, TrendingUp, Mic, Camera, Tag, Zap, MapPin, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const SearchBar = ({ onSearch, onFilterChange, showAdvanced = false }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const SearchBar = ({ onSearch, onFilterChange, showAdvanced = false, initialQuery = '' }) => {
+  const [searchTerm, setSearchTerm] = useState(initialQuery);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [showFilters, setShowFilters] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -53,19 +53,19 @@ const SearchBar = ({ onSearch, onFilterChange, showAdvanced = false }) => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    onSearch(searchTerm, selectedCategory);
+    onSearch?.(searchTerm, selectedCategory);
     setShowSuggestions(false);
   };
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-    onFilterChange(category);
+    onFilterChange?.(category);
   };
 
   const handleSuggestionClick = (suggestion) => {
     setSearchTerm(suggestion.text);
     setShowSuggestions(false);
-    onSearch(suggestion.text, selectedCategory);
+    onSearch?.(suggestion.text, selectedCategory);
   };
 
   const handleVoiceSearch = () => {

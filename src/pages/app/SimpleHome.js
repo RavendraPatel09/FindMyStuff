@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import SearchBar from '../../components/ui/SearchBar';
 import EnhancedFloatingActionButton from '../../components/layout/EnhancedFloatingActionButton';
@@ -7,6 +7,7 @@ import { Search, Users, Shield, Clock } from 'lucide-react';
 
 const SimpleHome = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   const features = [
     {
@@ -45,7 +46,9 @@ const SimpleHome = () => {
           
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto mb-8">
-            <SearchBar />
+            <SearchBar
+              onSearch={(query) => navigate(`/dashboard?search=${encodeURIComponent(query)}`)}
+            />
           </div>
 
           {/* Action Buttons */}

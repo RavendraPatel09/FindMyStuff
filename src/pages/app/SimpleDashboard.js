@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import SearchBar from '../../components/ui/SearchBar';
 import EnhancedFloatingActionButton from '../../components/layout/EnhancedFloatingActionButton';
 import { Search } from 'lucide-react';
@@ -48,8 +49,9 @@ const items = [
 ];
 
 const SimpleDashboard = () => {
+  const [searchParams] = useSearchParams();
   const [activeFilter, setActiveFilter] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(() => searchParams.get('search') || '');
   const filteredItems = useMemo(
     () => filterItems(items, activeFilter, searchQuery),
     [activeFilter, searchQuery]
@@ -75,7 +77,7 @@ const SimpleDashboard = () => {
         {/* Search and Filters */}
         <div className="mb-8">
           <div className="mb-4">
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar initialQuery={searchQuery} onSearch={handleSearch} />
           </div>
           
           <div className="flex flex-wrap gap-2">
