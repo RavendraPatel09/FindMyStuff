@@ -18,7 +18,16 @@ export const AuthProvider = ({ children }) => {
     // Check if user is logged in (from localStorage)
     const savedUser = localStorage.getItem('findmystuff_user');
     if (savedUser) {
-      setUser(JSON.parse(savedUser));
+      try {
+        const parsedUser = JSON.parse(savedUser);
+        if (!parsedUser || typeof parsedUser !== 'object' || Array.isArray(parsedUser)) {
+          throw new Error('Stored user data must be an object.');
+        }
+        setUser(parsedUser);
+      } catch (error) {
+        localStorage.removeItem('findmystuff_user');
+        console.error('Unable to restore saved user; invalid session data has been cleared.', error);
+      }
     }
     setIsLoading(false);
   }, []);
