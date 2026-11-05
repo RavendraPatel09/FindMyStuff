@@ -16,7 +16,6 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [errors, setErrors] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
 
   const { signup } = useAuth();
   const navigate = useNavigate();
@@ -80,7 +79,7 @@ const Signup = () => {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
 
@@ -89,12 +88,7 @@ const Signup = () => {
       return;
     }
 
-    setIsLoading(true);
-    
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
       // Mock successful signup
       const userData = {
         id: Date.now(),
@@ -108,8 +102,6 @@ const Signup = () => {
       navigate('/dashboard');
     } catch (error) {
       setErrors({ general: 'Signup failed. Please try again.' });
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -298,10 +290,9 @@ const Signup = () => {
 
             <button
               type="submit"
-              disabled={isLoading}
-              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white py-3 rounded-lg transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-glow"
+              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white py-3 rounded-lg transition-all duration-200 font-medium shadow-lg hover:shadow-glow"
             >
-              {isLoading ? 'Creating Account...' : 'Create Account'}
+              Create Account
             </button>
           </form>
 

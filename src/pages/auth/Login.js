@@ -11,7 +11,6 @@ const Login = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
 
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -48,7 +47,7 @@ const Login = () => {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
 
@@ -57,12 +56,7 @@ const Login = () => {
       return;
     }
 
-    setIsLoading(true);
-    
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
       // Mock successful login
       const userData = {
         id: 1,
@@ -75,8 +69,6 @@ const Login = () => {
       navigate('/dashboard');
     } catch (error) {
       setErrors({ general: 'Login failed. Please try again.' });
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -166,10 +158,9 @@ const Login = () => {
 
             <button
               type="submit"
-              disabled={isLoading}
-              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white py-3 rounded-lg transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-glow"
+              className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white py-3 rounded-lg transition-all duration-200 font-medium shadow-lg hover:shadow-glow"
             >
-              {isLoading ? 'Signing In...' : 'Sign In'}
+              Sign In
             </button>
           </form>
 
